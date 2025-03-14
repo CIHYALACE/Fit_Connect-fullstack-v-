@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    ''
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +76,14 @@ WSGI_APPLICATION = 'fitConnect.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
+    # remember the django language in case sensitive and postgres always sort the database data in lower case
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'fitconnect',
+        'USER': 'abdelrahman',
+        'PASSWORD': 'Abod@2000',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
